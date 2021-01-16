@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title>lorem ipsum | dolor simet adgola jugloa</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
+    <style>
+        body {
+            max-height: 100%;
+        font-family: "Montserrat", sans-serif;
+        }
+        
+        .dropbtn {
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        background-color: #222;
+        border-radius: 50%;
+        color: white;
+        font-size: 50px;
+        border: none;
+        transition: all 0.1s ease-in-out;
+        position: fixed;
+        right: 50px;
+        bottom: 50px;
+        }
+
+        /* The container <div> - needed to position the dropup content */
+        .dropup {
+        position: fixed;
+        right: 55px;
+        bottom: 70px;
+        display: inline-block;
+        }
+
+        /* Dropup content (Hidden by Default) */
+        .dropup-content {
+        display: none;
+        position: relative;
+        bottom: 50px;
+        background-color: transparent;
+        transition: all 0.1s ease-in-out;
+        z-index: 1;
+        }
+
+        /* Links inside the dropup */
+        .dropup-content a {
+        color: white;
+        width: 60px;
+        height: 60px;
+        font-size: 25px;
+        border-radius: 50%;
+        background-color: #555;
+        text-align: center;
+        transition: all 0.1s ease-in-out;
+        
+        line-height: 60px;
+        text-decoration: none;
+        display: block;
+        }
+
+        /* Change color of dropup links on hover */
+        .dropup-content a:hover {background-color: #111}
+
+        /* Show the dropup menu on hover */
+        .dropup:hover .dropup-content {
+        display: block;
+        transition: all 0.1s ease-in-out;
+        }
+
+        /* Change the background color of the dropup button when the dropup content is shown */
+        .dropup:hover .dropbtn {
+        background-color: #000;
+        }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand text-white" href="#">File Storage</a>
+        
+        
+
+        <div class="input-group mb-3 my-2 my-md-0 mx-2">
+          <form method="" style="width: 80%;">
+            <input class="form-control" type="text" placeholder="Search your files (eg 'images', '.pdf') ..." aria-label="Search">
+          </form>
+        </div>
+
+        <a class="btn btn-md btn-outline-light" href="/login">Sign Out</a>
+      </nav>
+
+
+      <div class="row mx-5 my-3">
+         
+        <div class="col">
+          <center class="text-dark">
+            Storage Used - <strong>0.5</strong>/1 GB
+          </center>
+          <div class="progress">
+            <div class="progress-bar bg-dark" role="progressbar" style="width: 5%" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="storage-contents row" style="margin: 1em;">
+        
+        <div class="card" style="width: 18rem; margin: 0.5em;">
+            <div style="margin: 0 auto;" class="mt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
+                    <path d="M.54 3.87L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"/>
+                  </svg>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Untitled Folder</h5>
+              <p class="card-text small" style="height: 20%;">Folder Description that user can update periodically.</p>
+              <p><small class="text-muted">Last updated 3 mins ago</small>
+        </p>
+            </div>
+        </div>
+
+        
+        <div class="card" style="width: 18rem; margin: 0.5em;">
+            <div style="margin: 0 auto;" class="mt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
+                    <path d="M.54 3.87L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"/>
+                  </svg>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Untitled Folder (2)</h5>
+              <p class="card-text small">Folder Description that user can update periodically.</p>
+              <p><small class="text-muted">Last updated 3 mins ago</small>
+        </p>
+            </div>
+        </div>
+        
+        <div class="card" style="width: 18rem; margin: 0.5em;">
+            <div style="margin: 0 auto;" class="mt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+                    <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                    <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"/>
+                  </svg>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">IMG-08322001.jpg</h5>
+              <p class="card-text small" style="height: 20%;">Untitled Image Description</p>
+              <p><small class="text-muted">Last updated 10 mins ago</small>
+        </p>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem; margin: 0.5em;">
+            <div style="margin: 0 auto;" class="mt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
+                    <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"/>
+                    <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+                  </svg>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Untitled Document.pdf</h5>
+              <p class="card-text small">Lorem Ipsum dolor simet lorem ipsum solor simet...</p>
+              <p><small class="text-muted">Last updated 10 mins ago</small>
+        </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="dropup">
+        <button class="dropbtn">+</button>
+        <div class="dropup-content">
+          <a href="#" class="mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+            <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+            <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"/>
+          </svg></a>
+          <a href="#" class="mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-camera-reels-fill" viewBox="0 0 16 16">
+            <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+            <path d="M9 6a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+            <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z"/>
+          </svg></a>
+          <a href="#" class="mb-1"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-text" viewBox="0 0 16 16">
+            <path d="M5.5 7a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5zM5 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/>
+            <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
+          </svg></a>
+          
+          <a class="mb-1 text-white" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-folder-plus" viewBox="0 0 16 16">
+                <path d="M.5 3l.04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.684.12L1.5 2.98a1 1 0 0 1 1-.98h3.672z"/>
+                <path d="M13.5 10a.5.5 0 0 1 .5.5V12h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V13h-1.5a.5.5 0 0 1 0-1H13v-1.5a.5.5 0 0 1 .5-.5z"/>
+              </svg>
+            </a>
+        </div>
+      </div> 
+  
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
