@@ -33,7 +33,7 @@ def home(request):
         "progress_bar":progress_percentage,
     }
     if file_size_gb >= 1:
-            messages.danger(request, f"You have exhausted 1 GB Space!!")
+            messages.error(request, f"You have exhausted 1 GB Space!!")
     else:
         print("You have memory left")
     if request.method == "POST":
@@ -41,7 +41,7 @@ def home(request):
     return render(request, 'myapp/home.html', context)
 
 @api_view(['GET', 'POST', 'DELETE'])
-def files_list(request):
+def files_list(request):    
     if request.method == "GET":
         files = Data.objects.all()
         serializer = DataSerializer(files, many=True)
@@ -49,10 +49,22 @@ def files_list(request):
     elif request.method=="POST":
         data = JSONParser().parse(request)
         serializer = DataSerializer(data=data)
-
         if serializer.is_valid():
-            serializer.save()
-            return JsonResponse(serializer.data, status=201)
+            
+            files = Data.objects.all()
+            total_size = 0
+
+            for file in files:
+                file_size = file.file.size
+                total_size += file_size
+            file_size_gb = ((total_size/1024)/1024)/1024
+            if file_size_gb >= 1:
+                    messages.error(request, f"You have exhausted 1 GB Space!!")
+                    file = Data.objects.get(pk=request.data.file_id)
+                    file.delete()
+            else:
+                serializer.save()
+                return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
 
 @api_view(['GET', 'PUT', 'DELETE'])

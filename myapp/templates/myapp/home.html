@@ -1,15 +1,16 @@
 {%extends 'myapp/base.html'%}
 
 {%block content%}
-      <div class="row mx-5 my-3">
-        {%if messages%}
+{%if messages%}
         {%for message in messages%}
             
-          <div class="alert alert-{{message.tags}} mb-2" role="alert">
+          <div class="alert alert-danger my-2" role="alert">
             {{message}}
           </div>
         {%endfor%}
     {%endif%}
+      <div class="row mx-5 my-3">
+        
         <div class="col">
           <center class="text-dark">
             Storage Used - <strong>{{storage}}</strong>/1 GB
