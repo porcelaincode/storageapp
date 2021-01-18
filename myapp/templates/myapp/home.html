@@ -99,17 +99,24 @@
 
 
       <div class="row mx-5 my-3">
-         
+        {%if messages%}
+        {%for message in messages%}
+            
+          <div class="alert alert-{{message.tags}} mb-2" role="alert">
+            {{message}}
+          </div>
+        {%endfor%}
+    {%endif%}
         <div class="col">
           <center class="text-dark">
             Storage Used - <strong>{{storage}}</strong>/1 GB
           </center>
           <div class="progress">
-            <div class="progress-bar bg-dark" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-            <script>
-              const bar = document.querySelector('.progress-bar')
-              bar.style.width = '{{progress_percentage}} %';
-            </script>
+            {%if progress_bar > 80%}
+            <div class="progress-bar bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{progress_bar}}%;"></div>
+            {%else%}
+            <div class="progress-bar bg-dark" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{progress_bar}}%;"></div>
+            {%endif%}
           </div>
         </div>
       </div>

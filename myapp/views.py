@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+from django.contrib import messages
+
 
 # Importing from rest_framework
 from rest_framework.parsers import JSONParser
@@ -31,7 +33,7 @@ def home(request):
         "progress_bar":progress_percentage,
     }
     if file_size_gb >= 1:
-        print("Alert!!!")
+            messages.danger(request, f"You have exhausted 1 GB Space!!")
     else:
         print("You have memory left")
     if request.method == "POST":
