@@ -78,3 +78,6 @@ def file_detail(request, pk):
         file.delete() 
         return JsonResponse({'message': 'File was deleted successfully!'}, status=status.HTTP_204_NO_CONTENT)
     
+@login_required
+def search(request):
+    return render(request, 'myapp/search.html', {})

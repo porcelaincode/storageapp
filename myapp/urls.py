@@ -6,6 +6,7 @@ from .routers import router
 
 urlpatterns = [
     path('', views.home, name="home-page"),
+    path('search/', views.search, name="search-page"),
     # url(r'^api/files$', views.files_list),
     # url(r'^api/files/(?P<pk>[0-9]+)$', views.file_detail),
     path('api/', include(router.urls)),

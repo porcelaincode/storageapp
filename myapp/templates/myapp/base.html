@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <title>lorem ipsum | dolor simet adgola jugloa</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"> 
+    <style>
+        body {
+            max-height: 100%;
+        font-family: "Montserrat", sans-serif;
+        }
+        
+        .dropbtn {
+        width: 70px;
+        height: 70px;
+        line-height: 70px;
+        background-color: #222;
+        border-radius: 50%;
+        color: white;
+        font-size: 50px;
+        border: none;
+        transition: all 0.1s ease-in-out;
+        position: fixed;
+        right: 50px;
+        bottom: 50px;
+        }
+
+        /* The container <div> - needed to position the dropup content */
+        .dropup {
+        position: fixed;
+        right: 55px;
+        bottom: 70px;
+        display: inline-block;
+        }
+
+        /* Dropup content (Hidden by Default) */
+        .dropup-content {
+        display: none;
+        position: relative;
+        bottom: 50px;
+        background-color: transparent;
+        transition: all 0.1s ease-in-out;
+        z-index: 1;
+        }
+
+        /* Links inside the dropup */
+        .dropup-content a {
+        color: white;
+        width: 60px;
+        height: 60px;
+        font-size: 25px;
+        border-radius: 50%;
+        background-color: #555;
+        text-align: center;
+        transition: all 0.1s ease-in-out;
+        
+        line-height: 60px;
+        text-decoration: none;
+        display: block;
+        }
+
+        /* Change color of dropup links on hover */
+        .dropup-content a:hover {background-color: #111}
+
+        /* Show the dropup menu on hover */
+        .dropup:hover .dropup-content {
+        display: block;
+        transition: all 0.1s ease-in-out;
+        }
+
+        /* Change the background color of the dropup button when the dropup content is shown */
+        .dropup:hover .dropbtn {
+        background-color: #000;
+        }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand text-white" href="/">File Storage</a>
+        
+        
+
+        <div class="input-group mb-3 my-2 my-md-0 mx-2">
+          <form method="" style="width: 80%;">
+            <input class="form-control" type="text" placeholder="Search your files (eg 'images', '.pdf') ..." aria-label="Search">
+          </form>
+        </div>
+
+        <a class="btn btn-md btn-outline-light" href="/logout">Sign Out</a>
+      </nav>
+{%block content%}
+{%endblock%}
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
