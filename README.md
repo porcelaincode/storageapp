@@ -11,7 +11,6 @@ These are the major frameworks that I built this project using.
 - [Whoosh](https://whoosh.readthedocs.io/en/latest/intro.html)
 - [Bootstrap](https://getbootstrap.com)
 - [JQuery](https://jquery.com)
-- [Laravel](https://laravel.com)
 
 <!-- GETTING STARTED -->
 
