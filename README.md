@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/porcelaincode/storageapp">
-    <img src="https://www.flaticon.com/svg/vstatic/svg/715/715563.svg?token=exp=1610966478~hmac=4ca47f5eb0a4a3f483f1728ca82f302a" alt="Logo" width="80" height="80">
+    <img src="https://img.icons8.com/color/344/folder-invoices--v1.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Storage App</h3>
