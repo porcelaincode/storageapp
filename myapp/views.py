@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.contrib import messages
-
+from django.db.models import Q
 
 # Importing from rest_framework
 from rest_framework.parsers import JSONParser
@@ -59,7 +59,7 @@ def files_list(request):
                 total_size += file_size
             file_size_gb = ((total_size/1024)/1024)/1024
             if file_size_gb >= 1:
-                    messages.error(request, f"You have exhausted 1 GB Space!!")
+                    messages.error(request, f"You have exhausted 1 GB Storage! To upload files please free up from space from this Storage.")
                     file = Data.objects.get(pk=request.data.file_id)
                     file.delete()
             else:
@@ -92,4 +92,13 @@ def file_detail(request, pk):
     
 @login_required
 def search(request):
-    return render(request, 'myapp/search.html', {})
+    query = request.GET.get('q')
+    object_list = Data.objects.filter(
+        Q(file__icontains=query)
+    )
+    context = {
+        "files":object_list,
+        "query":query,
+    }
+    print(object_list)
+    return render(request, 'myapp/search.html', context)

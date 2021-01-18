@@ -1,4 +1,132 @@
 {%extends 'myapp/base.html'%}
 
 {%block content%}
+<div style="margin: 1em;">
+    <h5 class="text-dark">Search results for <strong>{{query}}</strong> –</h5>  
+</div>
+<div class="storage-contents row" style="margin: 1em;"> 
+    <!-- <div class="card" style="width: 18rem; margin: 0.5em; border-width: 0.2em;">
+        <div style="margin: 0 auto;" class="mt-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-folder" viewBox="0 0 16 16">
+                <path d="M.54 3.87L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31zM2.19 4a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91h10.348a1 1 0 0 0 .995-.91l.637-7A1 1 0 0 0 13.81 4H2.19zm4.69-1.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707z"/>
+              </svg>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Untitled Folder</h5>
+          <p class="card-text small" style="height: 20%;">Folder Description that user can update periodically.</p>
+          <small class="text-muted">Last updated 3 mins ago</small>
+    
+        </div>
+        <div class="btn-group mb-2 mr-2" style="align-self: flex-end;" role="group" aria-label="Basic example">
+          
+          <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#editModal">Edit</button>
+
+          <a type="button" class="btn btn-outline-dark" href="" download>Download</a>
+
+          <button type="button" class="btn btn-outline-danger pt-2" 
+          data-toggle="modal" data-target="#deleteModal"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+          </svg></button>
+        </div>
+    </div> -->
+{%for file in files%}
+    <div class="card text-white bg-dark" style="max-width:16em; width: auto; margin: 0.5em;">
+        <div style="margin: 0 auto;" class="mt-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
+                <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z"/>
+                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z"/>
+              </svg>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{file.file}}</h5>
+          <small class="text-muted">File Size - {{file.file.size}} kB</small>
+          <br/>
+          <small class="text-muted">Date - {{file.date_created}}</small>
+          
+        </div>
+        <div class="btn-group mb-2 mr-2" style="align-self: flex-end;" role="group" aria-label="Basic example">
+          
+          <button type="button" class="btn btn-outline-info" style="border-width: 0em;" data-toggle="modal" data-target="#editModal{{file.file}}{{file.file.size}}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+            <path d="M13.498.795l.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
+          </svg></button>
+
+          <a type="button" class="btn btn-outline-light" style="border-width: 0em;" href="/media/{{file.file}}" download><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+          </svg></a>
+
+          <button type="button" class="btn btn-outline-danger pt-2" style="border-width: 0em;"
+          data-toggle="modal" data-target="#deleteModal{{file.file}}{{file.file.size}}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+            <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+          </svg></button>
+        </div>
+    </div>
+    <!-- Modal -->
+<div class="modal fade" id="deleteModal{{file.file}}{{file.file.size}}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="deleteModalLabel">Delete File</h5>
+
+  </div>
+  <div class="modal-body">
+    <h5>Do you want to delete file {{file.file}}?</h5>
+    <div class="text-danger">File will be deleted permanently. You will not be able to restore it.</div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <form id="formpostdelete{{file.file}}" method="DELETE" enctype="multipart/form-data">
+      
+    <button type="submit" class="btn btn-danger text-white">Delete Permanently</button>
+  </form>
+  </div>
+</div>
+</div>
+</div>
+<script>
+document.getElementById('formpostdelete{{file.file}}').addEventListener('submit', function(event) {
+event.preventDefault();
+fetch('http://127.0.0.1:8000/api/files/{{file.file_id}}', {
+  method: 'DELETE',
+  headers: {
+    // "Access-Control-Allow-Origin": "*",
+  },
+  body: {
+    "file_id":"{{file.file_id}}"
+  }
+}).then(response => {
+  return response.json();
+}).then(data => {
+  console.log(data);
+  location.reload(true);
+}).catch((error) => {
+  console.error('Error:', error);
+  location.reload(true);
+});
+});
+</script>
+<div class="modal fade" id="editModal{{file.file}}{{file.file.size}}" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title" id="editModalLabel">Edit/Rename file {{file.file}}</h5>
+  </div>
+  <div class="modal-body">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">New Name</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-info text-white">Rename</button>
+  </div>
+</div>
+</div>
+</div>
+{%endfor%}
+  </div>
+
 {%endblock%}

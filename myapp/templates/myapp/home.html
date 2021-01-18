@@ -17,6 +17,7 @@
           </center>
           <div class="progress">
             {%if progress_bar > 80%}
+          
             <div class="progress-bar bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{progress_bar}}%;"></div>
             {%else%}
             <div class="progress-bar bg-dark" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: {{progress_bar}}%;"></div>
@@ -225,9 +226,37 @@
 </div>
 
 
-      <div class="dropup">
+{%if progress_bar > 99%}
+<div class="dropup">
+          <button type="button" class="dropbtn" data-toggle="modal" data-target="#deletefileModalCenter">
+            +
+          </button>
+
+          <div class="modal fade" id="deletefileModalCenter" tabindex="+1" role="dialog" aria-labelledby="deletefileModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title text-danger" id="deletefileModalCenterTitle">No Storage Space!</h5>
+                  
+                </div>
+                <div class="modal-body">
+                  You have exhausted your free storage space qouta!
+                  To upload again, please try to delete unnecessary files.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-outline-dark">I understand</button>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>
+        {%else%}
+        <div class="dropup">
         <button class="dropbtn">+</button>
+        
         <div class="dropup-content">
+          {%if progress_bar < 99%}
           <a href="#" class="mb-1" data-toggle="modal" data-target="#postModal">
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
               <path d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5z"/>
@@ -241,7 +270,9 @@
               <path d="M13.5 10a.5.5 0 0 1 .5.5V12h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V13h-1.5a.5.5 0 0 1 0-1H13v-1.5a.5.5 0 0 1 .5-.5z"/>
             </svg>
           </a>
+          {%endif%}
         </div>
+        {%endif%}
       </div> 
   
 {%endblock%}

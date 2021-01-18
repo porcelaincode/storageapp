@@ -89,8 +89,14 @@
         
 
         <div class="input-group mb-3 my-2 my-md-0 mx-2">
-          <form method="" style="width: 80%;">
-            <input class="form-control" type="text" placeholder="Search your files (eg 'images', '.pdf') ..." aria-label="Search">
+          <form method="GET" action="{% url 'search-page' %}" style="
+          display: flex;
+          width: 60%;
+          align-items: center;">
+            <input class="form-control" name="q" type="text" placeholder="Search your files (eg 'images', '.pdf') ..." aria-label="Search" aria-describedby="button-search">
+            <div class="input-group-append">
+                <button class="btn btn-outline-light" type="submit" id="button-search">Search</button>
+            </div>
           </form>
         </div>
 
