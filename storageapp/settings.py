@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,8 +42,9 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'crispy_forms',
     'rest_framework',
-    "rest_framework.authtoken",
+    'rest_framework.authtoken',
     'corsheaders',
+    'haystack',
 ]
 
 REST_FRAMEWORK = {
@@ -131,6 +133,16 @@ CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:8000',
 )
+
+WHOOSH_INDEX = os.path.join(BASE_DIR, "whoosh/")
+
+
+HAYSTACK_CONNECTIONS = { 
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': WHOOSH_INDEX 
+    },
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/

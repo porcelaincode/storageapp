@@ -9,10 +9,18 @@ from rest_framework.parsers import JSONParser
 from rest_framework.decorators import api_view
 from rest_framework import status
 
-from .models import Data
 
+
+from django.db.models import Q 
+from rest_framework import mixins, viewsets 
+from haystack.query import SearchQuerySet 
+
+
+from .models import Data
 # importing local serializer
 from .serializers import DataSerializer
+
+
 
 @login_required
 def home(request):
@@ -92,13 +100,10 @@ def file_detail(request, pk):
     
 @login_required
 def search(request):
-    query = request.GET.get('q')
-    object_list = Data.objects.filter(
-        Q(file__icontains=query)
-    )
+    files = SearchQuerySet().autocomplete(content_auto=request.GET.get("q",""))
+    
     context = {
-        "files":object_list,
-        "query":query,
+        "files":files,
+        "query": request.GET.get('q'),
     }
-    print(object_list)
     return render(request, 'myapp/search.html', context)

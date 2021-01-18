@@ -21,6 +21,7 @@ These are the major frameworks that I built this project using.
 
 - [Django](https://www.djangoproject.com)
 - [Django REST Framework](https://django-rest-framework.com)
+- [Django Haystack](https://django-haystack.readthedocs.io/en/master/)
 - [Whoosh](https://whoosh.readthedocs.io/en/latest/intro.html)
 - [Bootstrap](https://getbootstrap.com)
 - [JQuery](https://jquery.com)
@@ -44,8 +45,14 @@ To get a local copy up and running, follow these simple example steps.
   pip install djangorestframework
   ```
 - django CORS header
+
   ```sh
   pip install django-cors-headers
+  ```
+
+- or run requirements file
+  ```sh
+  pip install -r requirements.txt
   ```
 
 ### Installation
