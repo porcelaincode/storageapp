@@ -9,7 +9,6 @@
   <h3 align="center">Storage App</h3>
 
   <p align="center">
-  
     Local Storage | Cloud Storage when deployed
   </p>
 </p>
