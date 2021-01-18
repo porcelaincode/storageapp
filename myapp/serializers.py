@@ -14,7 +14,8 @@ class DataSerializer(serializers.ModelSerializer):
     def get_size(self, obj):
         file_size = ''
         if obj.file and hasattr(obj.file, 'size'):
-            file_size = obj.file.size
+            file_size = (obj.file.size/1024)/1024
+            file_size = round(file_size, 2)
         return file_size    
         
     def get_name(self, obj):
