@@ -13,7 +13,7 @@
 
 ## About The Project
 
-This project acts as a file manager with a web interface, wired to REST API Framework, powered by Django. It can act as a cloud file storage when deployed on a development server.
+This web app when installed on a server acts as a file manager with a web interface, wired to REST API Framework, powered by Django. It can act as a cloud file storage when deployed on a development server.
 
 ### Built With
 
